@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
+  cacheComponents: !isExport, // not supported with output: "export"
+  partialPrefetching: !isExport,
   ...(isExport && {
     output: "export",
     basePath,
