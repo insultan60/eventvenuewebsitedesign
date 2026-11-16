@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Kaushan_Script, Manrope } from "next/font/google";
+import Loader from "./components/Loader";
+import Motion from "./components/Motion";
 import Nav from "./components/Nav";
 import { Footer } from "./components/ui";
 import { venue } from "./venue";
@@ -31,6 +33,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} antialiased`}>
       <body className="min-h-full font-sans">
+        <Loader />
+        <Motion />
         <Nav />
         <main>{children}</main>
         <Footer />
