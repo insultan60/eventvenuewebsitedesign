@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroVideo from "./components/HeroVideo";
 import { Accent, BookBand, BookButton, Heading } from "./components/ui";
 import { idealFor, photos, spaces, venue } from "./venue";
 
@@ -14,31 +15,33 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="shade-photo relative flex min-h-[92vh] items-center justify-center">
-        <Image src="/images/pool-and-spa.jpg" alt="Pool and jacuzzi at Twelve Palms Estate surrounded by palm trees" fill preload sizes="100vw" className="object-cover" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 pt-20 text-center">
-          <h1 className="script text-5xl text-white sm:text-7xl">
+      <section data-hero className="shade-photo relative flex h-[100svh] min-h-[560px] items-center justify-center">
+        <Image src="/images/pool-and-spa.jpg" alt="Pool and jacuzzi at Twelve Palms Estate surrounded by palm trees" fill preload sizes="100vw" className="hero-zoom object-cover" />
+        <HeroVideo src={venue.heroVideo} />
+        <div className="relative z-10 mx-auto max-w-3xl px-4 pb-24 pt-20 text-center">
+          <h1 className="hero-in script text-5xl text-white sm:text-7xl" style={{ "--d": "0ms" } as React.CSSProperties}>
             Where <Accent>Celebrations</Accent> Meet<br className="hidden sm:block" /> the California Sun
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-white/85">
+          <p className="hero-in mx-auto mt-6 max-w-xl text-white/85" style={{ "--d": "180ms" } as React.CSSProperties}>
             A private 12,000 sq ft outdoor estate in Sun Valley, Los Angeles, with pool, jacuzzi and garden oasis, for up to 200 guests.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="hero-in mt-8 flex flex-wrap justify-center gap-3" style={{ "--d": "340ms" } as React.CSSProperties}>
             <BookButton />
             <Link href="/gallery" className="btn btn-outline text-white">See the Estate</Link>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-0 z-10 border-t border-white/10 bg-night/40 backdrop-blur-sm">
+        <div className="hero-in absolute inset-x-0 bottom-0 z-10 border-t border-white/10 bg-night/40 backdrop-blur-sm">
           <dl className="mx-auto grid max-w-4xl grid-cols-2 divide-white/10 px-4 py-4 text-center text-white sm:grid-cols-4 sm:divide-x">
             {[["200", "Guests"], [venue.sqft, "Sq ft"], [`$${venue.rate}/hr`, `${venue.minHours} hr minimum`], ["10 AM – 10 PM", "Open daily"]].map(([v, l]) => (
               <div key={l} className="py-1"><dd className="font-bold">{v}</dd><dt className="text-xs text-white/60">{l}</dt></div>
             ))}
           </dl>
         </div>
+        <a href="#about" aria-label="Scroll down" className="scroll-cue absolute bottom-24 left-1/2 z-10 hidden -translate-x-1/2 sm:block"><span /></a>
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 md:grid-cols-2">
+      <section id="about" className="scroll-mt-20 mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 md:grid-cols-2">
         <div className="tile overflow-hidden rounded-sm shadow-xl">
           <Image src="/images/court-and-pool.jpg" alt="Backyard with basketball court, pool, gazebos and palm trees" width={640} height={480} sizes="(max-width: 768px) 100vw, 560px" className="h-full w-full object-cover" />
         </div>

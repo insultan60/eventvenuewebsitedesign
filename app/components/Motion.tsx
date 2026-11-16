@@ -19,7 +19,7 @@ export default function Motion() {
   useEffect(() => {
     setLoading(false);
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const els = Array.from(document.querySelectorAll<HTMLElement>(TARGETS));
+    const els = Array.from(document.querySelectorAll<HTMLElement>(TARGETS)).filter((el) => !el.closest("[data-hero]"));
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -28,12 +28,13 @@ export default function Motion() {
           io.unobserve(e.target);
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.15 },
     );
     for (const el of els) {
       const i = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
       el.style.setProperty("--d", `${Math.min(i, 6) * 90}ms`);
       el.classList.add("reveal");
+      if (el.querySelector("img") && !el.querySelector("h2, h3, p")) el.classList.add("reveal-img");
       io.observe(el);
     }
     return () => io.disconnect();

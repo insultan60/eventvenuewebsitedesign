@@ -11,7 +11,7 @@ export default function Loader() {
     const start = performance.now();
     const done = () => {
       const wait = Math.max(0, 1100 - (performance.now() - start));
-      setTimeout(() => setState("hide"), wait);
+      setTimeout(() => { setState("hide"); document.documentElement.classList.add("ready"); }, wait);
       setTimeout(() => setState("gone"), wait + 700);
     };
     if (document.readyState === "complete") done();

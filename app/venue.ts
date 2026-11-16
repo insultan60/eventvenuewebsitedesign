@@ -5,6 +5,8 @@ export const venue = {
   area: "Sun Valley, Los Angeles, CA",
   host: "Lily B.",
   bookingUrl: "https://www.peerspace.com/pages/listings/67d8c91cba7ef9ef28f31e46",
+  // Placeholder background clip (free Mixkit stock, hotlinked). Swap for a video of the estate when Lily sends one.
+  heroVideo: "https://assets.mixkit.co/videos/47286/47286-720.mp4",
   rate: 500,
   minHours: 8,
   guests: 200,
