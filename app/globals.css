@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --night: #0d1512;
+  --night-2: #16221d;
+  --accent: #2ec4d6;
+  --accent-2: #1fa3b4;
+  --paper: #ffffff;
+  --mist: #f4f6f5;
+  --ink: #141a17;
+  --muted: #5f6b66;
+  --line: #e3e8e5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-mist: var(--mist);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-script: var(--font-kaushan);
+  --font-sans: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); }
+::selection { background: var(--accent); color: #0d1512; }
+
+@layer components {
+  .kicker { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  .script { font-family: var(--font-kaushan), cursive; font-weight: 400; line-height: 1.15; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    padding: .8rem 1.5rem; border-radius: .4rem; font-weight: 700; font-size: .9rem;
+    transition: transform .2s, background .2s, color .2s, border-color .2s;
   }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-accent { background: var(--accent); color: var(--night); }
+  .btn-accent:hover { background: #5fd6e3; }
+  .btn-outline { border: 1.5px solid currentColor; }
+  .shade-photo { position: relative; overflow: hidden; }
+  .shade-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,21,18,.55), rgba(13,21,18,.78)); }
+  .strip img { transition: transform 1s cubic-bezier(.2,.7,.2,1), filter .6s; filter: brightness(.62); }
+  .strip:hover img { transform: scale(1.06); filter: brightness(.8); }
+  .tile img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .tile:hover img { transform: scale(1.05); }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .plus { transform: rotate(45deg); }
