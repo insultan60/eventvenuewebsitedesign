@@ -5,13 +5,13 @@ import { idealFor, venue } from "../venue";
 
 export const metadata: Metadata = {
   title: "About the Estate",
-  description: "Twelve Palms Estate is a private 12,000 sq ft outdoor event estate in Sun Valley, Los Angeles, with a pool, jacuzzi and garden oasis, hosted by Lily B.",
+  description: "Twelve Palms Estate is a private 12,000 sq ft outdoor event estate in North Hollywood, Los Angeles, with a pool, jacuzzi and garden oasis, hosted by Lily B.",
 };
 
 export default function About() {
   return (
     <>
-      <PageHero kicker="About" title={<>About <Accent>Twelve Palms</Accent></>} text="A private outdoor estate in Sun Valley, Los Angeles, made for gatherings worth remembering." photo="/images/fountain-garden.jpg" />
+      <PageHero kicker="About" title={<>About <Accent>Twelve Palms</Accent></>} text="A private outdoor estate in North Hollywood, Los Angeles, made for gatherings worth remembering." photo="/images/fountain-garden.jpg" />
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 md:grid-cols-2">
         <div>

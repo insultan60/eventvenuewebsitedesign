@@ -26,7 +26,7 @@ export default function Loader() {
         <path d="M12 21v-9" /><path d="M12 12c-1.5-3-4.5-4.5-8-4 2 1 3.5 2.4 4 4" /><path d="M12 12c1.5-3 4.5-4.5 8-4-2 1-3.5 2.4-4 4" /><path d="M12 12c0-3.5-1.5-6-4-8M12 12c0-3.5 1.5-6 4-8" />
       </svg>
       <p className="script mt-4 text-3xl text-white">Twelve Palms</p>
-      <p className="kicker mt-2 text-white/50">Estate · Sun Valley</p>
+      <p className="kicker mt-2 text-white/50">Estate · North Hollywood</p>
       <span className="loader-bar mt-6" />
     </div>
   );

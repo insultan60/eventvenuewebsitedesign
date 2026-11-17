@@ -65,13 +65,13 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-3">
         <div>
           <p className="script text-3xl">Twelve Palms <Accent>Estate</Accent></p>
-          <p className="mt-3 max-w-xs text-sm text-white/70">A private outdoor event estate with pool, spa and garden in Sun Valley, Los Angeles.</p>
+          <p className="mt-3 max-w-xs text-sm text-white/70">A private outdoor event estate with pool, spa and garden in North Hollywood, Los Angeles.</p>
           <div className="mt-6"><BookButton /></div>
         </div>
         <div>
           <p className="script flex items-center gap-2 text-2xl"><span className="h-2 w-2 rotate-45 bg-accent" />Get in Touch</p>
           <ul className="mt-4 space-y-3 text-sm text-white/75">
-            <li>Sun Valley, Los Angeles, CA<br /><span className="text-white/50">Exact address shared after booking</span></li>
+            <li>North Hollywood, Los Angeles, CA<br /><span className="text-white/50">Exact address shared after booking</span></li>
             <li>Open daily, 10 AM – 10 PM</li>
             <li><a href={venue.bookingUrl} target="_blank" rel="noopener" className="hover:text-accent">Message {venue.host} on Peerspace</a></li>
           </ul>

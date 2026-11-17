@@ -23,7 +23,7 @@ export default function Home() {
             Where <Accent>Celebrations</Accent> Meet<br className="hidden sm:block" /> the California Sun
           </h1>
           <p className="hero-in mx-auto mt-6 max-w-xl text-white/85" style={{ "--d": "180ms" } as React.CSSProperties}>
-            A private 12,000 sq ft outdoor estate in Sun Valley, Los Angeles, with pool, jacuzzi and garden oasis, for up to 200 guests.
+            A private 12,000 sq ft outdoor estate in North Hollywood, Los Angeles, with pool, jacuzzi and garden oasis, for up to 200 guests.
           </p>
           <div className="hero-in mt-8 flex flex-wrap justify-center gap-3" style={{ "--d": "340ms" } as React.CSSProperties}>
             <BookButton />

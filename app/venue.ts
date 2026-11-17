@@ -1,8 +1,8 @@
 // All venue facts in one place (from the Peerspace listing, Nov 2026).
 export const venue = {
   name: "Twelve Palms Estate",
-  tagline: "A private outdoor estate with pool, spa & garden in Sun Valley, Los Angeles",
-  area: "Sun Valley, Los Angeles, CA",
+  tagline: "A private outdoor estate with pool, spa & garden in North Hollywood, Los Angeles",
+  area: "North Hollywood, Los Angeles, CA",
   host: "Lily B.",
   bookingUrl: "https://www.peerspace.com/pages/listings/67d8c91cba7ef9ef28f31e46",
   // Placeholder background clip (free Mixkit stock, hotlinked). Swap for a video of the estate when Lily sends one.
